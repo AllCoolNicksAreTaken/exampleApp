@@ -34,51 +34,9 @@ public class CustomerListPage extends TestPage {
     }
 
     ///// private
-    public TableListPage clickCustomer(int index) {
+    private TableListPage clickCustomer(int index) {
         onView(withId(R.id.fragment_customer_list_recyclerview))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(index, click()));
-        new TableListPage().assertPresent();
-//        onData(anything())
-//                .inAdapterView(withId(R.id.fragment_customer_list_recyclerview))
-//                .atPosition(index).perform(click());
         return new TableListPage();
     }
-
-//    /**
-//     * Perform action of waiting for a specific view id. View hierarchy is accessed by its activity
-//     *
-//     * @param ressourceId
-//     * @param timeout
-//     * @return
-//     */
-//    private Boolean waitForView(int ressourceId, long timeout) {
-//
-//        long endTime = SystemClock.uptimeMillis() + timeout;
-//
-//        while (SystemClock.uptimeMillis() <= endTime) {
-//            View view = activity.findViewById(ressourceId);
-//
-//            if (view != null && view.getHeight() > 10) {
-//                //sleep();
-//                return true;
-//            }
-//            sleep();
-//        }
-//        return false;
-//    }
-//
-//    private void sleep() {
-//        sleep(100);
-//    }
-//
-//    private void sleep(int millis) {
-//        try {
-//            Thread.sleep(millis);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//
-//        }
-//    }
-
-
 }
